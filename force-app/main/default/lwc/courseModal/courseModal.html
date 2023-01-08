@@ -1,0 +1,41 @@
+<template>
+    <template for:each={coursedata} for:item="course">
+       <section key={course.Id} role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open slds-backdrop">
+        <div class="slds-modal__container">
+            <div class="slds-modal__header" style="background-color: #339af0;">
+            <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Course Name: {course.Course_Name__c}</h1>
+            </div>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <p><strong>Starting Date:</strong> {course.Course_Starting_Date__c}</p>
+                <p><strong>Closing Date:</strong> {course.Course_Closing_Date__c}</p>
+                <p><strong>Total Days:</strong> {course.Course_Duration__c}</p>
+                <p><strong>Current Strength:</strong> {course.Regestered_Strength__c}</p>
+            </div>
+            <div class="slds-modal__footer">
+                <button onclick={closemodal} class="slds-button slds-button_outline-brand" aria-label="Cancel and close">Close</button>
+                <button onclick={openStudentModal} class="slds-button" aria-label="Cancel and close">Students Enrolled</button>
+            </div>
+        </div>
+        </section>   
+    </template>
+    <template if:true={showStudentPopUp}>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open slds-backdrop">
+        <div class="slds-modal__container">
+            <div class="slds-modal__header" style="background-color: #339af0;">
+            <h1 id="modal-heading-02" class="slds-modal__title slds-hyphenate">Student List</h1>
+            </div>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                <lightning-datatable
+                    key-field="Id"
+                    data={studentList}
+                    columns={columns}
+                    hide-checkbox-column="true">
+                </lightning-datatable>
+            </div>
+            <div class="slds-modal__footer">
+                <button onclick={closeStuedntModal} class="slds-button slds-button_outline-brand" aria-label="Cancel and close">Close</button>
+            </div>
+        </div>
+        </section>   
+    </template>
+</template>

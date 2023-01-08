@@ -1,0 +1,37 @@
+<template>
+    <div style="margin-top:16px;margin-left: 21%;margin-right: 15%;">
+    <lightning-card class="slds-cols"  variant="Narrow"  title="Attendance List" icon-name="action:add_contact">
+        <div class="slds-grid slds-wrap slds-var-p-around_medium">
+            <lightning-button class="slds-col slds-col_bump-right slds-large-size_3-of-12" variant="base" label="Clear Previous Attendance" onclick={clearAttendance}></lightning-button>
+                <template if:true={showClearAttendancePopUp}>
+                    <c-clear-attendance
+                        oncloseclearattendance={closeattendancemodal}
+                        clearattsubjectid={clearAttendanceSubjectId}>
+                    </c-clear-attendance>
+                </template>
+            <div class="slds-col slds-col_bump-left slds-large-size_3-of-12 slds-m-bottom--medium">
+                <lightning-combobox
+                    name="progress"
+                    label="Select Course"
+                    value={value}
+                    placeholder="Choose the Course...."
+                    options={options}
+                    onchange={handleChange} 
+                    variant=label-hidden>
+                </lightning-combobox>
+            </div>
+            <div class="slds-col slds-large-size_12-of-12">
+                <lightning-datatable
+                    key-field="Id"
+                    data={dataList}
+                    onsave={handleSave}
+                    draft-values={draftValues}
+                    show-row-number-column
+                    hide-checkbox-column
+                    columns={columnsList}>
+                </lightning-datatable>
+            </div>
+        </div>
+    </lightning-card>
+    </div>
+</template>

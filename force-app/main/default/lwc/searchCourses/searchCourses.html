@@ -1,0 +1,30 @@
+<template>
+   <div class="slds-c-card-color-background: yellow;">
+   <lightning-card variant="Narrow">
+      <div>
+         <div style="height: 100%;width:100%">
+            <div class="slds-var-m-horizontal_x-small slds-var-m-bottom_large">
+               <div class="slds-size_medium">
+                  <lightning-input label="Search Course" placeholder="Type here..." type="Search"
+                  onkeypress={searchHandler}></lightning-input>
+               </div>
+            </div>
+            <lightning-datatable
+               key-field="Id"
+               data={courseListData}
+               columns={columns}
+               hide-checkbox-column="true"
+               onrowaction={handleRowAction}>
+            </lightning-datatable>
+         </div>
+      </div>
+      <template if:true={showCourseModal}>
+         <c-course-modal
+         courseid = {courseId}
+         coursedata={courseDetailsById}
+         onclose={closeHandler}>
+         </c-course-modal>
+      </template>
+   </lightning-card>
+   </div>
+</template>
