@@ -1,4 +1,4 @@
-# Instiute Management
+# Institute Management
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/106376953/213930720-bc9259cd-2d9d-4f78-b2a6-0a5252323caf.png">
 
 ## Features of the App
