@@ -5,7 +5,7 @@
 - Manages the different Courses offered by the Institue.
 - Tracks the Student attendance and total count of the attendance in a month.
 - Send automatic Email to the Student's Email ID if the Attenadance is less than the pre defined value.
-- Displayes List of Student enrolled in a Particular course.
+- Displays List of Student enrolled in a Particular course.
 - Separate Tab for marking the Attendance of each student in a course.
-- A scheduled batch Apex which is used to update the Attendance count to 0 on 1st every month.
+- A Scheduled Batch APEX which is used to update the Attendance count to 0 on 1st of every month.
 - Appropriate Toast Messages and SLDS Modals.
