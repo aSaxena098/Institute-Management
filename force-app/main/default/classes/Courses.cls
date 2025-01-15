@@ -29,6 +29,7 @@ public with sharing class Courses {
     {
         Id courseRecordId = var.courseId;
         List<Student__c> studentList = [SELECT Id,Name,Student_Name__c,Email__c FROM Student__c where Course__r.Id =: courseRecordId]; 
+        System.debug('Hello from Main');
         return studentList; 
     }
 }
