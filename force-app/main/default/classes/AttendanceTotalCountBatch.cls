@@ -14,7 +14,8 @@ public class AttendanceTotalCountBatch implements Database.Batchable<sObject>
     {
         for(Attendance__c att:attList)
         {
-            att.Total_Count__c=0;
+            att.Total_Count__c=0.1;
+            System.debug('Hello');
             att.Attendance__c = false;
         }
         UPDATE attList;
