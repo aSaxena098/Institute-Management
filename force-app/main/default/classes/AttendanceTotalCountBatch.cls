@@ -25,6 +25,6 @@ public class AttendanceTotalCountBatch implements Database.Batchable<sObject>
     }
     public void finish(Database.BatchableContext BC)
     {
-
+        System.debug('Hello Dev b2');
     }
 }
