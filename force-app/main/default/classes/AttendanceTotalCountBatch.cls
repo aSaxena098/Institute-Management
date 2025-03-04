@@ -3,9 +3,6 @@
 */
 public class AttendanceTotalCountBatch implements Database.Batchable<sObject>
 {
-    /*
-        Comment from dev b2
-    */ 
     public Database.QueryLocator start(Database.BatchableContext BC)
     {
         String query = 'SELECT Anubhav__c ,Id,Total_Count__c,Student_Name__c,Attendance__c,Course__c FROM Attendance__c';
