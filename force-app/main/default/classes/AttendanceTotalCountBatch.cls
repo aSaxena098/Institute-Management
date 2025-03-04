@@ -20,6 +20,9 @@ public class AttendanceTotalCountBatch implements Database.Batchable<sObject>
         }
         UPDATE attList;
     }
+    public static void helloWorld(){
+        System.debug('Heeleo world!!');
+    }
     public void finish(Database.BatchableContext BC)
     {
 
