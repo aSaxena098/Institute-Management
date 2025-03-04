@@ -1,11 +1,13 @@
 /*
     1. coming from main
+    2. Coming from dev b1
 */
 public class AttendanceTotalCountBatch implements Database.Batchable<sObject>
 {
     public Database.QueryLocator start(Database.BatchableContext BC)
     {
         String query = 'SELECT Id,Total_Count__c,Student_Name__c,Attendance__c,Course__c FROM Attendance__c';
+        Sytem.debug('Testiging DEV_b1');
         return Database.getQueryLocator(query);
     }
     public void execute(Database.BatchableContext BC,List<Attendance__c> attList)
