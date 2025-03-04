@@ -1,3 +1,6 @@
+/*
+    1. coming from main
+*/
 public class AttendanceTotalCountBatch implements Database.Batchable<sObject>
 {
     public Database.QueryLocator start(Database.BatchableContext BC)
