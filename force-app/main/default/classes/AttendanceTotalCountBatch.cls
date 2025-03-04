@@ -8,6 +8,7 @@ public class AttendanceTotalCountBatch implements Database.Batchable<sObject>
         String query = 'SELECT Id,Total_Count__c,Student_Name__c,Attendance__c,Course__c FROM Attendance__c';
         return Database.getQueryLocator(query);
     }
+    //Murakmi
     public void execute(Database.BatchableContext BC,List<Attendance__c> attList)
     {
         for(Attendance__c att:attList)
@@ -21,5 +22,9 @@ public class AttendanceTotalCountBatch implements Database.Batchable<sObject>
     public void finish(Database.BatchableContext BC)
     {
         System.debug('Hello Dev b2');
+    }
+    // Murakmi 2
+    public void main(){
+        //Murakmi 3
     }
 }
